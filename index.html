@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Iron Element Training – Gimnasio en Talca, Maule. Entrenamiento serio, disciplina y acompañamiento profesional. Conoce nuestros horarios y ubicación.">
+    <meta name="keywords" content="gimnasio en Talca, gym Talca, entrenamiento personalizado, Iron Element Talca, fitness Maule">
+    <meta name="author" content="Iron Element Training">
+    <title>Iron Element Training | Gimnasio en Talca</title>
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <!-- Security: Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.google.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://wa.me https://www.instagram.com;">
+    <!-- Google Fonts + Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000000c7 url('https://i.imgur.com/0QF97zO.jpg') center/cover fixed no-repeat;
+            background-blend-mode: multiply;
+            background-color: #000000f8;
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        /* variables premium basadas en branding Iron Element */
+        :root {
+            --bg-dark: #000000;
+            --bg-card: #000000;
+            --gold: #d3a33a;
+            --gold-dark: #a97524;
+            --red-accent: #d74720;
+            --fire-orange: #ff8e2a;
+            --text-light: #f4efe9;
+            --border-glow: rgba(211, 160, 45, 0.45);
+            --shadow-premium: 0 25px 45px -12px rgba(136, 20, 20, 0.7);
+        }
+
+        /* tipografías */
+        h1, h2, h3, .logo-text, .nav-links a {
+            font-family: 'Bebas Neue', cursive;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+            letter-spacing: 2px;
+        }
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 70px;
+            height: 3px;
+            background: var(--gold);
+        }
+        .section-light {
+            background: linear-gradient(120deg, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.95));
+            background-image: url('https://images.unsplash.com/photo-1531628345971-61f5d9ef2870?auto=format&fit=crop&w=1600&q=80');
+            background-blend-mode: overlay;
+            background-size: cover;
+        }
+        .section-dark {
+            background: linear-gradient(120deg, rgba(116, 14, 14, 0.397), rgba(25, 8, 8, 0.95));
+        }
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        /* header / navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+            background: linear-gradient(90deg, rgba(10, 10, 12, 0.9) 0%, rgba(20, 15, 18, 0.9) 50%, rgba(10, 10, 12, 0.9) 100%);
+            backdrop-filter: blur(8px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid rgba(211, 160, 45, 0.5);
+        }
+        h2, h3, .logo-text, .nav-links a {
+            color: #f2e4c2;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .logo-icon {
+            display: none; /* se reemplaza con imagen en vez de icono */
+        }
+        .logo-img {
+            max-height: 80px;
+            width: auto;
+            aspect-ratio: 1/1;
+            border-radius: 12px;
+            border: 2px solid rgba(211,160,45,0.35);
+            box-shadow: 0 0 18px rgba(211,160,45,0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .logo-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(211,160,45,0.6);
+        }
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #f2e4c2;
+        }
+        .logo-text span {
+            color: var(--gold);
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #e0e4ec;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: 0.3s;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+        }
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: white;
+        }
+        /* Hero */
+        .hero {
+            position: relative;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            background: url('fondoinicio.png') center/cover no-repeat;
+            background-size: cover;
+            background-position: center 40%;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.25);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 750px;
+            margin-left: 5%;
+            padding: 2rem;
+        }
+        .hero-logo {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 1.5rem;
+        }
+        .hero-logo .logo-img {
+            max-height: 150px;
+            width: auto;
+            aspect-ratio: 1/1;
+            border-radius: 15px;
+            border: 3px solid rgba(255, 142, 42, 0.5);
+            box-shadow: 0 0 40px rgba(255, 142, 42, 0.8), 0 0 80px rgba(255, 142, 42, 0.4);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 40px rgba(255, 142, 42, 0.8), 0 0 80px rgba(255, 142, 42, 0.4);
+            }
+            to {
+                box-shadow: 0 0 60px rgba(255, 142, 42, 1), 0 0 120px rgba(255, 142, 42, 0.6);
+            }
+        }
+        .hero h1 {
+            font-size: 5.8rem;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            color: #f3d383;
+            text-shadow: 0 0 18px rgba(255, 182, 78, 0.55);
+        }
+        .hero .slogan {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #ffb74d;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+            text-shadow: 0 0 10px rgba(255, 142, 42, 0.5);
+        }
+        .hero-description {
+            font-size: 1.1rem;
+            max-width: 550px;
+            margin: 1.5rem 0 2rem;
+            color: #cdd4e2;
+        }
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0.9rem 2rem;
+            border-radius: 40px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background: linear-gradient(145deg, #d3a33a 0%, #f3c05a 100%);
+            color: #111;
+            box-shadow: 0 6px 14px rgba(211,160,45,0.35);
+        }
+        .btn-primary:hover {
+            background: linear-gradient(145deg, #e5b24f 0%, #fdca78 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.35);
+        }
+        .btn-outline {
+            border: 1.5px solid rgba(211,160,45,0.9);
+            color: #f4efe9;
+            background: linear-gradient(120deg, rgba(17,17,19,0.8), rgba(22,19,23,0.8));
+        }
+        .btn-outline:hover {
+            background: var(--gold);
+            color: black;
+            transform: translateY(-3px);
+        }
+        .btn-dark {
+            background: #1e232c;
+            color: white;
+            border: 1px solid #3a4050;
+        }
+        .btn-dark:hover {
+            background: #2c3340;
+        }
+
+        /* cards general */
+        .services-grid, .features-grid, .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        .service-card, .feature-card, .plan-card {
+            background: var(--bg-card);
+            padding: 2rem 1.5rem;
+            border-radius: 1.5rem;
+            transition: 0.25s ease;
+            border: 1px solid rgba(212,175,55,0.15);
+            backdrop-filter: blur(2px);
+        }
+        .service-card:hover, .feature-card:hover, .plan-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-premium);
+        }
+        .service-card i, .feature-card i {
+            font-size: 2.8rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        .service-card h3, .feature-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0.8rem;
+        }
+        .schedule-box {
+            background: var(--bg-card);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            border-left: 4px solid var(--gold);
+        }
+        .hours-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+            gap: 0.8rem;
+            margin: 1.5rem 0;
+        }
+        .hour-item {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed #2a2f3a;
+            padding: 0.6rem 0;
+        }
+        .location-info {
+            margin: 1.5rem 0;
+        }
+        .btn-maps {
+            background: #1e2a3a;
+        }
+        .contact-form {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 1.5rem;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 0.9rem;
+            background: #0f141c;
+            border: 1px solid #2c3342;
+            border-radius: 1rem;
+            color: white;
+            font-family: inherit;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+            gap: 1.5rem;
+        }
+        .faq-item {
+            background: #0f151f;
+            padding: 1.2rem;
+            border-radius: 1rem;
+        }
+        .faq-item h4 {
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+        footer {
+            background: #020406;
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid #1e232c;
+        }
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .social-links a {
+            color: white;
+            font-size: 1.6rem;
+            margin: 0 0.5rem;
+            transition: 0.2s;
+        }
+        .social-links a:hover {
+            color: var(--gold);
+        }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #25d366;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: 0.2s;
+            z-index: 99;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.08);
+            background: #20b859;
+        }
+        @media (max-width: 850px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: #0a0e14;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                padding: 1.5rem;
+                gap: 1rem;
+                border-bottom: 1px solid var(--gold);
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .hero h1 {
+                font-size: 3rem;
+            }
+            .slogan {
+                font-size: 1.4rem;
+            }
+            .container {
+                padding: 2rem 1.5rem;
+            }
+            h2 {
+                font-size: 2.2rem;
+            }
+        }
+        @media (max-width: 550px) {
+            .btn-group {
+                flex-direction: column;
+                width: 100%;
+            }
+            .btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navegación -->
+<nav class="navbar">
+    <div class="logo">
+        <img class="logo-img" src="Logoironelement.webp" alt="Iron Element Logo">
+        <div class="logo-text">IRON <span>ELEMENT</span></div>
+    </div>
+    <div class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
+    </div>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#inicio">INICIO</a></li>
+        <li><a href="#sobre">SOBRE</a></li>
+        <li><a href="#servicios">SERVICIOS</a></li>
+        <li><a href="#horarios">HORARIOS</a></li>
+        <li><a href="#planes">PLANES</a></li>
+        <li><a href="#contacto">CONTACTO</a></li>
+    </ul>
+</nav>
+
+<!-- Hero principal -->
+<section id="inicio" class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        
+        <h1>FORJA TU <br> CARÁCTER</h1>
+        <div class="slogan">Disciplina que transforma · Fuerza sin límites</div>
+        <p class="hero-description">En Talca, el entrenamiento real comienza donde termina la excusa. Ambiente premium, entrenadores expertos y rutinas de adaptación para principiantes y avanzados.</p>
+        <div class="btn-group">
+            <a href="https://wa.me/56972771791?text=Hola%20Iron%20Elements,%20quiero%20info%20sobre%20entrenamiento" target="_blank" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Hablar por WhatsApp</a>
+            <a href="https://maps.google.com/?q=Calle+6+S+1127,+Talca,+Maule,+Chile" target="_blank" class="btn btn-outline"><i class="fas fa-location-dot"></i> Ver ubicación</a>
+            <a href="https://www.instagram.com/ironelement_talca/?hl=es" target="_blank" class="btn btn-outline"><i class="fab fa-instagram"></i> Instagram</a>
+        </div>
+    </div>
+</section>
+
+<!-- Sobre Iron Element -->
+<section id="sobre" class="section-light">
+    <div class="container">
+        <h2>SOBRE IRON ELEMENT</h2>
+        <p style="font-size: 1.2rem; max-width: 850px; margin-bottom: 1.5rem;">Ubicados en el corazón de Talca (Maule), Iron Element Training nace para quienes buscan resultados reales, acompañamiento serio y un ambiente que impulsa la constancia. Más que un gimnasio, somos una comunidad enfocada en la evolución física y mental.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 1rem;">
+            <div style="flex:1; background: var(--bg-card); border-radius: 1rem; padding: 1.5rem;">
+                <i class="fas fa-chalkboard-user" style="color: var(--gold); font-size: 2rem;"></i>
+                <h3 style="margin: 0.8rem 0;">Entrenamiento con propósito</h3>
+                <p>Rutinas de adaptación, seguimiento profesional y un staff que te exigirá al mejor nivel. Diego Velásquez Telles (@diego.trainner) lidera el equipo técnico.</p>
+            </div>
+            <div style="flex:1; background: var(--bg-card); border-radius: 1rem; padding: 1.5rem;">
+                <i class="fas fa-location-dot" style="color: var(--gold); font-size: 2rem;"></i>
+                <h3 style="margin: 0.8rem 0;">Talca, Maule</h3>
+                <p>Acceso rápido, estacionamiento y espacio diseñado para máxima concentración. Calle 6 S 1127, 3465482.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Servicios -->
+<section id="servicios" class="section-dark">
+    <div class="container">
+        <h2>SERVICIOS</h2>
+        <div class="services-grid">
+            <div class="service-card"><i class="fas fa-person-walking-arrow-right"></i><h3>Rutinas de adaptación</h3><p>Diseñadas para principiantes o personas retomando el entrenamiento. Progresión segura.</p></div>
+            <div class="service-card"><i class="fas fa-users"></i><h3>Entrenadores expertos</h3><p>Acompañamiento personalizado, corrección técnica y motivación constante.</p></div>
+            <div class="service-card"><i class="fas fa-seedling"></i><h3>Principiantes bienvenidos</h3><p>Ambiente amigable pero serio, ideal para dar el primer paso.</p></div>
+            <div class="service-card"><i class="fas fa-chart-line"></i><h3>Avanzados / fuerza & estética</h3><p>Programas de fuerza, hipertrofia y rendimiento para objetivos exigentes.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- Por qué elegir Iron Element -->
+<section class="section-light">
+    <div class="container">
+        <h2>¿POR QUÉ ELEGIRNOS?</h2>
+        <div class="features-grid">
+            <div class="feature-card"><i class="fas fa-brain"></i><h3>Enfoque real</h3><p>Sin falsas promesas, trabajamos con disciplina y ciencia del deporte.</p></div>
+            <div class="feature-card"><i class="fas fa-handshake"></i><h3>Acompañamiento profesional</h3><p>Seguimiento individualizado, evaluaciones y ajustes periódicos.</p></div>
+            <div class="feature-card"><i class="fas fa-fire"></i><h3>Ambiente motivador</h3><p>Energía, música y comunidad que te impulsa a superarte.</p></div>
+            <div class="feature-card"><i class="fas fa-map-pin"></i><h3>Ubicación estratégica</h3><p>En Talca, fácil acceso desde todo el sector poniente y centro.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- Horarios y ubicación -->
+<section id="horarios" class="section-dark">
+    <div class="container">
+        <h2>HORARIOS & UBICACIÓN</h2>
+        <div class="schedule-box">
+            <div class="hours-list">
+                <div class="hour-item"><span>Lunes a Viernes</span><strong>7:00 – 22:00 hrs</strong></div>
+                <div class="hour-item"><span>Sábado</span><strong>11:30 – 16:00 hrs</strong></div>
+                <div class="hour-item"><span>Domingo</span><strong>Cerrado</strong></div>
+            </div>
+            <div class="location-info">
+                <p><i class="fas fa-map-marker-alt" style="color: var(--gold);"></i> <strong>Calle 6 S 1127, Talca, Maule, Chile</strong></p>
+                <a href="https://maps.google.com/?q=Calle+6+S+1127,+Talca,+Maule,+Chile" target="_blank" class="btn btn-dark btn-maps" style="margin-top: 1rem; display: inline-flex;"><i class="fas fa-directions"></i> Abrir en Google Maps</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sección Planes / membresías (sin precios) -->
+<section id="planes" class="section-light">
+    <div class="container">
+        <h2>MEMBRESÍAS & PLANES</h2>
+        <p style="margin-bottom: 2rem; font-size: 1.1rem;">Descubre nuestros PLANES DESTACADOS. Elige el que mejor se adapte a tu horario y objetivos.</p>
+        <div class="plans-grid">
+            <div class="plan-card">
+                <i class="fas fa-fire-flame-curved" style="font-size: 2rem; color: #ff8e2a;"></i>
+                <h3>PLAN ACTÍVATE</h3>
+                <p><strong>07:00 - 14:00 hrs</strong></p>
+                <p style="font-size: 1.4rem; color: var(--gold); font-weight: bold; margin: 0.5rem 0;">$29.990</p>
+                <p>Ideal para mañanas activas con entrenamiento de alta intensidad.</p>
+            </div>
+            <div class="plan-card">
+                <i class="fas fa-bolt" style="font-size: 2rem; color: #ff8e2a;"></i>
+                <h3>IRON BREAK</h3>
+                <p><strong>13:00 - 17:00 hrs</strong></p>
+                <p style="font-size: 1.4rem; color: var(--gold); font-weight: bold; margin: 0.5rem 0;">$24.990</p>
+                <p>Perfecto para un entrenamiento express durante la tarde.</p>
+            </div>
+            <div class="plan-card">
+                <i class="fas fa-dumbbell" style="font-size: 2rem; color: #ff8e2a;"></i>
+                <h3>PLAN FULL</h3>
+                <p><strong>Horario completo</strong></p>
+                <p style="font-size: 1.4rem; color: var(--gold); font-weight: bold; margin: 0.5rem 0;">$44.990</p>
+                <p>Acceso total, con todos los apoyos y entrenamientos premium.</p>
+            </div>
+            <div class="plan-card">
+                <i class="fas fa-user-graduate" style="font-size: 2rem; color: #ff8e2a;"></i>
+                <h3>PLAN ESTUDIANTE UNIVERSITARIO</h3>
+                <p><strong>Con certificado de alumno regular</strong></p>
+                <p style="font-size: 1.4rem; color: var(--gold); font-weight: bold; margin: 0.5rem 0;">$39.990</p>
+                <p>Ideal para jóvenes con horarios variables y presupuesto inteligente.</p>
+            </div>
+        </div>
+
+        <div style="margin-top: 2rem; background: rgba(17,22,31,0.90); padding: 1.5rem; border-radius: 1rem; border: 1px solid rgba(212,175,55,0.2);">
+            <h3 style="margin-bottom: 0.8rem;">¿Qué incluye?</h3>
+            <ul style="list-style: none; padding-left: 0; font-size: 1.05rem; line-height: 1.6;">
+                <li>✅ Acceso de lunes a sábado</li>
+                <li>✅ Rutina personalizada según tu nivel</li>
+                <li>✅ Entrenadores siempre disponibles</li>
+                <li>✅ Evaluación corporal (Plan Full)</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+            <p><strong>¿Listo para entrenar con nosotros?</strong> Contáctanos por WhatsApp o en el local para confirmar tu plan.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Instagram y comunidad -->
+<section class="section-dark">
+    <div class="container" style="text-align: center;">
+        <i class="fab fa-instagram" style="font-size: 3rem; color: var(--gold); margin-bottom: 1rem; display: inline-block;"></i>
+        <h2 style="margin-bottom: 0.5rem;">SOMOS COMUNIDAD</h2>
+        <p style="max-width: 600px; margin: 0 auto 2rem;">Sigue a <strong>@ironelement_talca</strong> en Instagram. Allí compartimos rutinas, transformaciones reales y la energía de nuestros entrenamientos. Únete a la tribu.</p>
+        <a href="https://www.instagram.com/ironelement_talca/?hl=es" target="_blank" class="btn btn-primary" style="background: #c13584; border: none;"><i class="fab fa-instagram"></i> Visitar Instagram oficial</a>
+        <div style="margin-top: 2.5rem; background: #11161f; border-radius: 2rem; padding: 1rem;">
+            <p><i class="fas fa-user-check"></i> Referente: Diego Velásquez Telles · <a href="https://www.instagram.com/diego.trainner/" target="_blank" style="color: var(--gold);">@diego.trainner</a> | Entrenador principal</p>
+        </div>
+    </div>
+</section>
+
+<!-- Contacto rápido + formulario -->
+<section id="contacto" class="section-light">
+    <div class="container">
+        <h2>CONTACTO DIRECTO</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 2rem;">
+            <div>
+                <p><i class="fas fa-phone-alt" style="color: var(--gold);"></i> <strong>Teléfono / WhatsApp</strong><br> <a href="tel:+56972771791" style="color: white; text-decoration: none;">+56 9 7277 1791</a></p>
+                <p><i class="fab fa-whatsapp"></i> <strong>Chat rápido</strong><br><a href="https://wa.me/56972771791?text=Hola%20quiero%20información%20sobre%20entrenamiento" target="_blank" style="color: var(--gold);">Escribir por WhatsApp</a></p>
+                <p><i class="fas fa-map-pin"></i> <strong>Dirección</strong><br>Calle 6 S 1127, Talca, Maule</p>
+                <a href="https://www.instagram.com/ironelement_talca/" target="_blank" class="btn btn-outline" style="margin-top: 1rem;"><i class="fab fa-instagram"></i> Instagram</a>
+            </div>
+            <div class="gallery-placeholder">
+                <h3>Imágenes del Gym</h3>
+                <p style="text-align: center; color: #888;">Próximamente: Galería de fotos del gimnasio</p>
+                <div style="background: #111; border-radius: 1rem; padding: 2rem; text-align: center; min-height: 200px; display: flex; align-items: center; justify-content: center;">
+                    <div>
+                        <i class="fas fa-images" style="font-size: 3rem; color: var(--gold); margin-bottom: 1rem;"></i>
+                        <p>Espacio reservado para fotos del entrenamiento y instalaciones</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Preguntas Frecuentes -->
+<section class="section-dark">
+    <div class="container">
+        <h2>PREGUNTAS FRECUENTES</h2>
+        <div class="faq-grid">
+            <h4><i class="fas fa-map-marker-alt"></i> ¿Dónde está ubicado Iron Element?</h4>
+            <h4><i class="fas fa-clock"></i> ¿Cuál es el horario?</h4>
+            <h4><i class="fas fa-comment-dots"></i> ¿Cómo puedo pedir información?</h4>
+            <h4><i class="fas fa-dumbbell"></i> ¿Tienen entrenadores?</h4>
+            <h4><i class="fas fa-clipboard-list"></i> ¿Hay rutinas de adaptación?</h4>
+            <h4><i class="fas fa-dollar-sign"></i> ¿Cómo conocer los planes?</h4>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <div><strong>IRON ELEMENT TRAINING</strong><br>Gimnasio en Talca · Fuerza & Disciplina</div>
+        <div><i class="fas fa-map-marker-alt"></i> Calle 6 S 1127, Talca<br><i class="fab fa-whatsapp"></i> +56 9 7277 1791</div>
+        <div class="social-links">
+            <a href="https://www.instagram.com/ironelement_talca/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/56972771791" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+    <hr style="border-color: #1f2a36; margin: 1rem 0;">
+    <p style="font-size: 0.8rem;">Horario: L-V 7am-10pm | Sáb 11:30am-4pm | Dom cerrado. ¡Entrena con propósito!</p>
+</footer>
+
+<!-- Botón flotante WhatsApp -->
+<a href="https://wa.me/56972771791?text=Hola%20Iron%20Elements,%20me%20gustaría%20recibir%20información" class="whatsapp-float" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+    // Menú móvil
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    if(menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    }
+    // Cerrar menú al hacer click en enlace
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
+
+    // Smooth scroll para enlaces internos
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if(targetId === "#" || targetId === "") return;
+            const targetElement = document.querySelector(targetId);
+            if(targetElement) {
+                e.preventDefault();
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+</script>
+
+<!-- Eslogan principal: "Disciplina que transforma · Fuerza sin límites" 
+     Alternativas adicionales (por si se desea cambiar):
+     1. "Convierte sudor en acero"
+     2. "Donde la constancia forja campeones"
+     3. "Eleva tu estándar, entrena con carácter" -->
+</body>
+</html>
